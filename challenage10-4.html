@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script>
+    const allstyle = {
+      root:{ 
+        name : "root", 
+        style:{width:"100vw", height: "100vh",backgroundColor : "#fff"}
+      },
+      rootIm:{width:"100%", height: "80%", backgroundColor : "black"
+      },
+      card1 :{width:"50%", height: "30%", backgroundColor : "gray", margin: "5%"},
+      card1T1 :{
+        style: {display : "inline"},
+        text :"title2"
+      },
+      card1li :{
+        style: {display : "inline"},
+        text :"line2"
+      },
+      card1te :{
+        style: {},
+        text :"text"
+      },
+      card2 :{width:"50%", height: "30%", backgroundColor : "gray", margin: "5%"},
+      card2T1 :{
+        style: {display : "inline"},
+        text :"title2"
+      },
+      card2li :{
+        style: {display : "inline"},
+        text :"line2"
+      },
+      card2te :{
+        style: {},
+        text :"text"
+      }
+    }
+
+    // root안에 스타일
+    const divstyle = (stylevalue_obj,diffDiv,text) => {
+      const Div = document.createElement("div")
+      diffDiv.appendChild(Div)
+      for (let key in stylevalue_obj){
+        Div.style[key] = stylevalue_obj[key];
+      }
+      if(text){ 
+        Div.innerText = text;
+      }
+      return Div
+    }
+
+    //root
+    const rootstyle = (id,stylevalue_obj) => {
+      const root = document.getElementById(id)
+      for (let key in stylevalue_obj)
+      root.style[key] = stylevalue_obj[key];
+      return id
+    }
+    rootstyle(allstyle.root.name, allstyle.root.style)
+    // root-im
+    const rootIm =divstyle(allstyle.rootIm, root)
+    //card1
+    const card1 = divstyle(allstyle.card1, rootIm)
+    //card1안에
+    const a = (test1, text) =>{
+      divstyle(test1, card1, text)
+    }
+    
+    a(allstyle.card1T1.style, allstyle.card1T1.text)
+    a(allstyle.card1li.style, allstyle.card1li.text)
+    a(allstyle.card1te.style, allstyle.card1te.text)
+    //card2
+    const card2 = divstyle(allstyle.card2, rootIm)
+    //card2T1
+    divstyle(allstyle.card2T1.style, card2, allstyle.card2T1.text)
+    //card2li
+    divstyle(allstyle.card2li.style, card2, allstyle.card2li.text)
+    //card2te
+    divstyle(allstyle.card2te.style, card2, allstyle.card2te.text)
+  </script>
+</body>
+</html>
