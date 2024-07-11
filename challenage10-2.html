@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    document.body.style.margin = "0";
+    document.body.style.padding = "0";
+
+    const root = document.getElementById("root")
+    root.style.width = "100vw";
+    root.style.height = "100vh";
+    root.style.backgroundColor = "#fff";
+
+    const rootIm = document.createElement("div")
+    rootIm.id = "root-Im";
+    root.appendChild(rootIm)
+    rootIm.style.width = "100%";
+    rootIm.style.height = "80%";
+    rootIm.style.backgroundColor = "black";
+      
+    const card1 = document.createElement("div")
+    card1.id = "card1";
+    rootIm.appendChild(card1)
+    card1.style.width = "50%";
+    card1.style.height = "30%";
+    card1.style.backgroundColor = "gray";
+    card1.style.margin = "5%";
+  
+    const card1T1 = document.createElement("div")
+    card1T1.id = "card1-T1";
+    card1.appendChild(card1T1)
+    card1T1.innerText = "title1";
+    card1T1.style.display = "inline";
+
+    const card1li = document.createElement("div")
+    card1li.id = "card1-li";
+    card1.appendChild(card1li)
+    card1li.innerText = "line1";
+    card1li.style.display = "inline";
+
+    const card1te = document.createElement("div")
+    card1te.id = "card1-te";
+    card1.appendChild(card1te)
+    card1te.innerText = "text1";
+
+
+    const card2 = document.createElement("div")
+    card2.id = "card2";
+    rootIm.appendChild(card2)
+    card2.style.width = "50%";
+    card2.style.height = "30%";
+    card2.style.backgroundColor = "gray";
+    card2.style.margin = "5%";
+
+    const card2T1 = document.createElement("div")
+    card2T1.id = "card2-T1";
+    card2.appendChild(card2T1)
+    card2T1.innerText = "title1";
+    card2T1.style.display = "inline";
+
+    const card2li = document.createElement("div")
+    card2li.id = "card2-li";
+    card2.appendChild(card2li)
+    card2li.innerText = "line1";
+    card2li.style.display = "inline";
+
+    const card2te = document.createElement("div")
+    card2te.id = "card2-te";
+    card2.appendChild(card2te)
+    card2te.innerText = "text1";
+
+
+
+  </script>
+</body>
+</html>
