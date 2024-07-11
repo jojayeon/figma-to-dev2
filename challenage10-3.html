@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script>
+
+    // root안에 스타일
+    const divstyle = (stylevalue_obj,diffDiv,text) => {
+      const Div = document.createElement("div")
+      diffDiv.appendChild(Div)
+      for (let key in stylevalue_obj){
+        // console.log(stylevalue_obj[key])
+        // console.log(Div.style.key)
+        Div.style[key] = stylevalue_obj[key];
+        // console.log(Div.style[key])
+      }
+      if(text){ // 안에 적을 내용이 없을 경우 매개변수를 안적는 경우 undefined가 나옴 
+        Div.innerText = text;
+      }
+      return Div
+    }
+
+    //root
+    const rootstyle = (id,stylevalue_obj) => {
+      const root = document.getElementById(id)
+      for (let key in stylevalue_obj)
+      root.style[key] = stylevalue_obj[key];
+      return id
+    }
+    rootstyle("root", {width:"100vw", height: "100vh", backgroundColor : "#fff"})
+
+    //root도 함수로 못 만들까? 내가 도전 안하는 것 아닐까?
+    //
+    // const root = document.getElementById("root")
+    // root.style.width = "100vw";
+    // root.style.height = "100vh";
+    // root.style.backgroundColor = "#fff";
+
+    // root-im
+    const rootIm =divstyle({width:"100%", height: "80%", backgroundColor : "black"}, root)
+    
+    
+    //card1
+    const card1 = divstyle({width:"50%", height: "30%", backgroundColor : "gray", margin: "5%"}, rootIm)
+    //card1안에 부분 인데 이것들도 거의 비슷한데 함수로 못 만들까?
+    //card1T1
+    // divstyle({display : "inline"}, card1, "title1")
+    // //card1li
+    // divstyle({display : "inline"}, card1, "line1")
+    // //card1te
+    // divstyle({}, card1, "text1")
+    
+    const a = (test1, text) =>{
+      divstyle(test1, card1, text)
+    }
+    a({display : "inline"}, "title1")
+    a({display : "inline"}, "line1")
+    a({}, "text1")
+
+    //card2
+    const card2 = divstyle({width:"50%", height: "30%", backgroundColor : "gray", margin: "5%"}, rootIm)
+    //card2T1
+    divstyle({display : "inline"}, card2, "title2")
+    //card2li
+    divstyle({display : "inline"}, card2, "line2")
+    //card2te
+    divstyle({}, card2, "text2")
+
+    // ! 우선 완성후 
+      // 1. root부분도 함수로 제작해보기
+  </script>
+</body>
+</html>
